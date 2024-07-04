@@ -1,0 +1,28 @@
+*{
+    padding: opx;
+    margin: 0px;
+}
+
+
+:root{
+    main--
+}
+.mainContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: var main--background--color
+}
+.navbarContainer{
+    height: 60px;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+.contenContainer{
+    height: calc(100% - 60px);
+    width: 100%;
+    background-color: rgb(182, 127, 234);
+}
+
+
+
