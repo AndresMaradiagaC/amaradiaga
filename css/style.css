@@ -5,23 +5,27 @@
 
 
 :root{
-    main--
+    --main-background-color:  white;
+    --primary-color: purple;
+    --secondary-color: blue;
+    --navbar-container-height: 60px;
+
 }
 .mainContainer{
     width: 100vw;
     height: 100vh;
-    background-color: var main--background--color
+    background-color: var (--main-background-color);
 }
 .navbarContainer{
-    height: 60px;
+    height:var(--navbar-container-height);
     width: 100%;
-    background-color: blueviolet;
+    background-color: var(--primary-color);
 }
 
 .contenContainer{
-    height: calc(100% - 60px);
+    height: calc(100% var(--navbar-container-height));
     width: 100%;
-    background-color: rgb(182, 127, 234);
+    background-color: var (--main-background-color);
 }
 
 
