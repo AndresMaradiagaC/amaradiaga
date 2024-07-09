@@ -1,37 +1,36 @@
-*{
+* {
     padding: opx;
     margin: 0px;
 }
 
 
-:root{
-    --main-background-color:  white;
+:root {
+    --main-background-color: white;
     --primary-color: purple;
     --secondary-color: blue;
     --navbar-container-height: 60px;
-
 }
-.mainContainer{
+
+.mainContainer {
     width: 100vw;
     height: 100vh;
     background-color: var (--main-background-color);
 }
-.navbarContainer{
-    height:var(--navbar-container-height);
+
+.navbarContainer {
+    height: var(--navbar-container-height);
     width: 100%;
     background-color: var(--primary-color);
 }
 
-.contenContainer{
-    height: calc(100% var(--navbar-container-height));
+.contenContainer {
+    height: calc(100% - var(--navbar-container-height));
     width: 100%;
     background-color: var (--main-background-color);
 }
 
-.menuview{
+.menuview {
     width: 100%;
     height: 100%;
     background-color: red;
 }
-
-
