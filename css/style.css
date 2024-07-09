@@ -23,7 +23,7 @@
     background-color: var(--primary-color);
 }
 
-.contenContainer {
+.contentContainer {
     height: calc(100% - var(--navbar-container-height));
     width: 100%;
     background-color: var (--main-background-color);
