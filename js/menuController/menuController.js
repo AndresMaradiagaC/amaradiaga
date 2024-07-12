@@ -1,12 +1,10 @@
-
+import { Controller } from "../controller.js";
 import { MenuView } from "./menuView.js";
 
-export class MenuController{
-    parent;
-    view;
-    constructor(parent, view){
-        this.parent = parent;
-        this.view = new MenuView(this.parent);
+export class MenuController extends Controller{
+    constructor(parent){
+        super();
+        this.view = new MenuView(parent);
 
     }
 }

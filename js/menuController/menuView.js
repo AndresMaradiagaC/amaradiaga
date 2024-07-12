@@ -1,8 +1,11 @@
-import { div } from "../libs/html.js";
+import { HTMLView } from "../htmlView.js";
 
-export class MenuView {
+export class MenuView extends HTMLView {
     constructor(parent) {
-        this.parent = parent;
-        this.container = div(this.parent, {className: 'menuview'});
+        super(parent);
+        this.className = 'menu-view';
+        console.dir(this);
     }
 }
+
+customElements.define("menu-view", MenuView);
