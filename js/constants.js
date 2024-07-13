@@ -14,3 +14,15 @@ export const GOTO_EVENT_TYPE = {
     THEMES: themes,
     CREDITS: Credits,
 }
+
+const low = '4';
+const med = '8';
+const high = '16';
+
+
+
+export const DIFFICULTY_TYPE = {
+    LOW: low,
+    MED: med,
+    HIGH: high,
+}

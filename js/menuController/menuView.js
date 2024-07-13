@@ -13,6 +13,9 @@ export class MenuView extends HTMLView {
         this.container = div(this, { className: 'menu-view-container' });
 
         this.loginBtn = div(this.container, { className: 'button', innerHTML: 'Login', onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.LOGIN) });
+
+
+        
         this.playBtn = div(this.container, { className: 'button', innerHTML: 'Play', onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.PLAY)});
         this.scoresBtn = div(this.container, { className: 'button', innerHTML: 'Scores', onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.SCORES)});
         this.difficultysBtn = div(this.container, { className: 'button', innerHTML: 'Difficulty',onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.DIFFICULTY)});
