@@ -8,7 +8,10 @@
     --main-background-color: white;
     --primary-color: purple;
     --secondary-color: blue;
-    --navbar-container-height: 60px;
+    --navbar-container-height: 70px;
+    --button-color: white;
+    --button-background-color: var(--primary-color);
+
 }
 
 .mainContainer {
@@ -29,3 +32,23 @@
     background-color: var (--main-background-color);
 }
 
+.fade {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--button-color);
+    background-color: var(--button-background-color);
+    height: 50px;
+    width: 50%;
+    border-radius: 10px;
+    cursor: pointer;
+
+}

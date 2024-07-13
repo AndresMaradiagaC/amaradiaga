@@ -1,10 +1,11 @@
 import { div } from "./libs/html.js";
 
 export class HTMLView  extends HTMLElement{
-    constructor(parent){
+    constructor(parentElement, controller){
         super();
-        this.parent = parent;
-        this.parent.appendChild(this);
+        parentElement.appendChild(this);
+        this.controller = controller;
+
 
         customElements.define("html-view", HTMLView);
     }
