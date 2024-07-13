@@ -5,8 +5,15 @@ export class HTMLView  extends HTMLElement{
         super();
         parentElement.appendChild(this);
         this.controller = controller;
+    }
 
+    show(){
+        this.style.left = '0px';
+    }
 
-        customElements.define("html-view", HTMLView);
+    hide(){
+        this.style.left = '100%';
+
     }
 }
+customElements.define("html-view", HTMLView);

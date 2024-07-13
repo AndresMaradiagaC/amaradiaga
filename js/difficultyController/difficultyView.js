@@ -12,11 +12,12 @@ export class DifficultyView extends HTMLView {
 
         this.container = div(this, { className: 'difficulty-view-container' });
 
-        this.lownBtn = div(this.container, { className: 'button', innerHTML: 'Low', onclick: this.changeScreen.bind(this, DIFFICULTY_TYPE.LOW) });
+        this.lowBtn = div(this.container, { className: 'button', innerHTML: 'Low', onclick: this.changeScreen.bind(this,DIFFICULTY_TYPE.LOW) });
 
         this.medBtn = div(this.container, { className: 'button', innerHTML: 'Medium', onclick: this.changeScreen.bind(this, DIFFICULTY_TYPE.MED) });
 
         this.highBtn = div(this.container, { className: 'button', innerHTML: 'High', onclick: this.changeScreen.bind(this, DIFFICULTY_TYPE.HIGH) });
+        this.show();
 
 
 

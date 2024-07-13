@@ -10,24 +10,29 @@ export class AppManager {
         this.currentController = null;
 
         window.addEventListener('goto', (event) => {
-        this.changeScreen(event.detail.eventType);   
-        });
-
+        this.changeScreen(event.detail.eventType);
+        });        
     }
-    changeScreen(eventType) {
+    changeScreen(eventType){
         switch (eventType) {
             case GOTO_EVENT_TYPE.LOGIN:
+                
                 break;
             case GOTO_EVENT_TYPE.PLAY:
+                
                 break;
             case GOTO_EVENT_TYPE.SCORES:
+                
                 break;
             case GOTO_EVENT_TYPE.DIFFICULTY:
-                this.currentController = new DifficultyController(contentContainer);
+                this.currentController = new DifficultyController(this.contentContainer);
+                
                 break;
             case GOTO_EVENT_TYPE.THEMES:
+                
                 break;
             case GOTO_EVENT_TYPE.CREDITS:
+                
                 break;
             default:
                 break;
