@@ -1,7 +1,7 @@
 export class Controller{
     view;
     service;
-    constructor(parentElement){
+    constructor(parent){
 
     }
 }
