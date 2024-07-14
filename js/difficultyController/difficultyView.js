@@ -1,4 +1,4 @@
-import { DIFFICULTY_TYPE} from "../constants.js";
+import { DIFFICULTY_TYPE } from "../constants.js";
 import { HTMLView } from "../htmlView.js";
 import { div } from "../libs/html.js";
 
@@ -8,13 +8,14 @@ export class DifficultyView extends HTMLView {
         super(parentElement, controller);
         this.className = 'difficulty-view';
 
-        this.fade = div(this, { className: 'fade'});
+        this.fade = div(this, { className: 'fade' });
 
         this.container = div(this, { className: 'difficulty-view-container' });
 
-        this.appendChild(this.container);
-        
-        this.lowBtn = div(this.container, { className: 'button', innerHTML: 'Low', onclick: this.changeScreen.bind(this,DIFFICULTY_TYPE.LOW) });
+        // this.appendChild(this.container); 
+        //Esto no hace falta aqui porque en la linea 13 al invocar div(this, ....) ya se esta pasando el parent element, que es this, al elemento que se va a creat en la funcion div.
+
+        this.lowBtn = div(this.container, { className: 'button', innerHTML: 'Low', onclick: this.changeScreen.bind(this, DIFFICULTY_TYPE.LOW) });
 
         this.medBtn = div(this.container, { className: 'button', innerHTML: 'Medium', onclick: this.changeScreen.bind(this, DIFFICULTY_TYPE.MED) });
 
@@ -26,8 +27,8 @@ export class DifficultyView extends HTMLView {
 
     }
 
-    changeScreen(difficulty){
-        const event = new CustomEvent('change-difficulty', { 
+    changeScreen(difficulty) {
+        const event = new CustomEvent('change-difficulty', {
             detail: {
                 difficulty: difficulty
             },
