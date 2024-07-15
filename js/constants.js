@@ -4,6 +4,8 @@ const scores = 'SCORES';
 const difficulty = 'DIFFICULTY';
 const themes = 'THEMES';
 const Credits = 'CREDITS';
+const menu = 'MENU';
+
 
 
 export const GOTO_EVENT_TYPE = {
@@ -13,6 +15,7 @@ export const GOTO_EVENT_TYPE = {
     DIFFICULTY: difficulty,
     THEMES: themes,
     CREDITS: Credits,
+    MENU: menu
 }
 
 const low = 4;

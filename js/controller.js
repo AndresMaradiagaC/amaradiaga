@@ -1,7 +1,13 @@
-export class Controller{
+export class Controller {
+
     view;
     service;
-    constructor(parent){
+    constructor(parent) {
+       
+    }
 
+    remove() {
+        console.log('remove');
+        this.view.remove();
     }
 }

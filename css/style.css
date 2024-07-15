@@ -1,6 +1,9 @@
 * {
-    padding: opx;
+    padding: 0px;
     margin: 0px;
+    font-family: "Londrina Solid", sans-serif;
+
+
 }
 
 
@@ -13,6 +16,12 @@
     --button-background-color: var(--primary-color);
 
 }
+.londrina-solid-thin {
+    font-family: "Londrina Solid", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
 
 .mainContainer {
     width: 100vw;
@@ -21,9 +30,35 @@
 }
 
 .navbarContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: var(--navbar-container-height);
     width: 100%;
     background-color: var(--primary-color);
+}
+
+.navbarContainer-back-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: calc(var(--navbar-container-height) - 30px);
+    height: calc(var(--navbar-container-height) - 30px);
+    position: fixed;
+    left: 10px;
+    color: var(--primary-color);
+    font-size: 30px;
+    cursor: pointer;
+    padding-right: 5px;
+    border-radius: 50%;
+    background-color: var(--button-color);
+}
+
+.navbarContainer-tittle{
+    color: var(--button-color);
+    font-size: 30px;
+
 }
 
 .contentContainer {
@@ -50,5 +85,8 @@
     width: 50%;
     border-radius: 10px;
     cursor: pointer;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
 
 }

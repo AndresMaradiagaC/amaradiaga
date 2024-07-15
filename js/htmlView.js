@@ -5,6 +5,8 @@ export class HTMLView  extends HTMLElement{
         super();
         parentElement.appendChild(this);
         this.controller = controller;
+        this.fade = div(this, { className: 'fade' });
+        this.container = div(this, {});
     }
 
     show(){
@@ -14,6 +16,10 @@ export class HTMLView  extends HTMLElement{
     hide(){
         this.style.left = '100%';
 
+    }
+
+    remove(){
+        this.parentElement.removeChild(this);
     }
 }
 customElements.define("html-view", HTMLView);
