@@ -8,4 +8,7 @@ export class MenuController extends Controller{
         this.view = new MenuView(parentElement, this);
 
     }
+    updateLanguage (){
+        this.view.updateLanguage();
+    }
 }

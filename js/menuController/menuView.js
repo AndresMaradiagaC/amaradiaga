@@ -12,7 +12,7 @@ export class MenuView extends HTMLView {
 
         this.container.className = 'menu-view-container';
 
-        this.loginBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.login, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.LOGIN) });
+        this.loginBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.login(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.LOGIN) });
 
         // this.appendChild(this.container);
         // Esto no hace falta aqui porque en la linea 13 al invocar div(this, ....) ya se esta pasando el parent element, que es this, al elemento que se va a creat en la funcion div.
@@ -23,6 +23,7 @@ export class MenuView extends HTMLView {
         this.difficultyBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.difficulty, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.DIFFICULTY) });
         this.themesBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.theme, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.THEMES) });
         this.creditsBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.credits, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.CREDITS) });
+        this.localizationBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.language, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.LOCALIZATION) });
 
 
     }
@@ -36,6 +37,10 @@ export class MenuView extends HTMLView {
         });
         this.dispatchEvent(event);
     }
+    updateLanguage (){
+        this.loginBtn.innerHTML = LOCALIZATION.login();
+    }
+
 }
 
 customElements.define("menu-view", MenuView);

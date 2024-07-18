@@ -5,6 +5,8 @@ const difficulty = 'DIFFICULTY';
 const themes = 'THEMES';
 const Credits = 'CREDITS';
 const menu = 'MENU';
+const localization = 'LOCALIZATION';
+
 
 
 
@@ -15,7 +17,8 @@ export const GOTO_EVENT_TYPE = {
     DIFFICULTY: difficulty,
     THEMES: themes,
     CREDITS: Credits,
-    MENU: menu
+    MENU: menu,
+    LOCALIZATION: localization
 }
 
 const low = 4;
@@ -40,5 +43,15 @@ export const THEME_TYPE = {
     FOOD: food,
     FACES: faces,
     fLAGS: flags,
+
+}
+
+const spanish = 'es';
+const english = 'en';
+
+
+export const LANGUAGE_TYPE = {
+    ES: spanish,
+    EN: english,
 
 }

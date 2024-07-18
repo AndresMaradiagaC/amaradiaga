@@ -1,11 +1,18 @@
-import { GOTO_EVENT_TYPE } from "./constants.js";
+import { GOTO_EVENT_TYPE, LANGUAGE_TYPE } from "./constants.js";
 import { DifficultyController } from "./difficultyController/difficultyController.js";
 import { LOCALIZATION } from "./localization.js";
 import { MenuController } from "./menuController/menuController.js";
 import { ThemesController } from "./themesController/themesController.js";
+import { LocalizationController } from "./localizationController/localizationController.js";
+
 
 export class AppManager {
     constructor() {
+        
+        if (!localStorage.getItem('language')){
+            localStorage.setItem('language', LANGUAGE_TYPE.EN);
+        }
+ 
         const navbarContainer = document.getElementById('navbarContainer');
         this.contentContainer = document.getElementById('contentContainer');
         this.backBtn = document.getElementById('backBtn');
@@ -54,11 +61,17 @@ export class AppManager {
                 this.navbarTitle.innerHTML = 'Credits';
                 break;
             case GOTO_EVENT_TYPE.MENU:
-                this.navbarTitle.innerHTML = LOCALIZATION.menu;
+                this.navbarTitle.innerHTML = LOCALIZATION.menu();
+                this.menuController.updateLanguage();
                 this.backBtn.classList.add('hidden');
                 this.currentController.remove();
                 this.currentController = null;
                 break;
+                case GOTO_EVENT_TYPE.LOCALIZATION:
+                    this.navbarTitle.innerHTML = LOCALIZATION.language;
+                    this.backBtn.classList.add('hidden');
+                    this.currentController = new LocalizationController(this.contentContainer);
+                    break;
             default:
                 break;
         }
