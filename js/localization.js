@@ -9,6 +9,12 @@ const low = 'Low';
 const medium = 'Medium';
 const hight = 'Hight';
 
+const food = 'Food';
+const faces = 'Faces';
+const flags = 'Flags';
+
+
+
 
 
 export const LOCALIZATION = {
@@ -22,5 +28,9 @@ export const LOCALIZATION = {
     low: low,
     medium: medium,
     hight: hight,
+
+    food: food,
+    faces: faces,
+    flags: flags,
 
 }

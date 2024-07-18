@@ -2,6 +2,7 @@ import { GOTO_EVENT_TYPE } from "./constants.js";
 import { DifficultyController } from "./difficultyController/difficultyController.js";
 import { LOCALIZATION } from "./localization.js";
 import { MenuController } from "./menuController/menuController.js";
+import { ThemesController } from "./themesController/themesController.js";
 
 export class AppManager {
     constructor() {
@@ -44,7 +45,10 @@ export class AppManager {
                 this.currentController = new DifficultyController(this.contentContainer);
                 break;
             case GOTO_EVENT_TYPE.THEMES:
-                this.navbarTitle.innerHTML = 'Themes';
+                this.backBtn.classList.remove('hidden');
+                this.navbarTitle.innerHTML = LOCALIZATION.theme;
+                this.currentController = new ThemesController(this.contentContainer);
+
                 break;
             case GOTO_EVENT_TYPE.CREDITS:
                 this.navbarTitle.innerHTML = 'Credits';

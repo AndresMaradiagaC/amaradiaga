@@ -29,3 +29,16 @@ export const DIFFICULTY_TYPE = {
     MED: med,
     HIGH: high
 }
+
+
+const food = 'FOOD';
+const faces = 'FACES';
+const flags = 'FLAGS';
+
+
+export const THEME_TYPE = {
+    FOOD: food,
+    FACES: faces,
+    fLAGS: flags,
+
+}
