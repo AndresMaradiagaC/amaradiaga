@@ -4,6 +4,7 @@ import { LOCALIZATION } from "./localization.js";
 import { MenuController } from "./menuController/menuController.js";
 import { ThemesController } from "./themesController/themesController.js";
 import { LocalizationController } from "./localizationController/localizationController.js";
+import { LoadingController } from "./loadingController/loadingController.js";
 
 
 export class AppManager {
@@ -23,8 +24,8 @@ export class AppManager {
 
         this.navbarTitle = document.getElementById('navbarTitle');
 
-        this.menuController = new MenuController(this.contentContainer);
-        this.currentController = null;
+        this.menuController = new  MenuController(this.contentContainer);
+        this.currentController = new LoadingController(this.contentContainer);
 
         window.addEventListener('goto', (event) => {
             this.changeScreen(event.detail.eventType);
@@ -42,6 +43,7 @@ export class AppManager {
                 break;
             case GOTO_EVENT_TYPE.PLAY:
                 this.navbarTitle.innerHTML = 'Play';
+
                 break;
             case GOTO_EVENT_TYPE.SCORES:
                 this.navbarTitle.innerHTML = 'Scores';
@@ -53,7 +55,7 @@ export class AppManager {
                 break;
             case GOTO_EVENT_TYPE.THEMES:
                 this.backBtn.classList.remove('hidden');
-                this.navbarTitle.innerHTML = LOCALIZATION.theme;
+                this.navbarTitle.innerHTML = LOCALIZATION.themes;
                 this.currentController = new ThemesController(this.contentContainer);
 
                 break;

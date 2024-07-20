@@ -8,12 +8,12 @@
 
 
 :root {
-    --main-background-color: white;
-    --primary-color: purple;
-    --secondary-color: blue;
+    --main-background-color: #333333;
+    --primary-color:  #015900;
+    --secondary-color: #593400;
     --navbar-container-height: 70px;
     --button-color: white;
-    --button-background-color: var(--primary-color);
+    --button-background-color: var(--secondary-color);
 
 }
 .londrina-solid-thin {
@@ -35,7 +35,7 @@
     justify-content: center;
     height: var(--navbar-container-height);
     width: 100%;
-    background-color: var(--primary-color);
+    background-color: var(--button-background-color);
 }
 
 .navbarContainer-back-button {

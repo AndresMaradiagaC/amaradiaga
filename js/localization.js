@@ -10,7 +10,7 @@ const login = 'Login';
 const play = 'Play';
 const scores = 'Scores';
 const difficulty = 'Difficulty';
-const theme = 'Theme';
+const themes = 'Themes';
 const credits = 'Credits';
 const language = 'Language';
 const low = 'Low';
@@ -24,9 +24,9 @@ const flags = 'Flags';
 const spanish = 'Spanish';
 const english = 'English';
 
+//Spanish
 const menuES = 'Menu';
 const loginES = 'Iniciar sesion';
-
 const spanishES = 'Español';
 const englishES = 'Ingles';
 
@@ -39,7 +39,7 @@ export const LOCALIZATION = {
     play: play,
     scores: scores,
     difficulty: difficulty,
-    theme: theme,
+    themes: themes,
     credits: credits,
     low: low,
     language: language,
