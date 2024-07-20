@@ -5,6 +5,7 @@ import { MenuController } from "./menuController/menuController.js";
 import { ThemesController } from "./themesController/themesController.js";
 import { LocalizationController } from "./localizationController/localizationController.js";
 import { LoadingController } from "./loadingController/loadingController.js";
+import { PlayController } from "./playController/playController.js";
 
 
 export class AppManager {
@@ -42,7 +43,9 @@ export class AppManager {
                 this.navbarTitle.innerHTML = 'Login';
                 break;
             case GOTO_EVENT_TYPE.PLAY:
-                this.navbarTitle.innerHTML = 'Play';
+                this.backBtn.classList.remove('hidden');
+                this.navbarTitle.innerHTML = LOCALIZATION.play();
+                this.currentController = new PlayController(this.contentContainer);
 
                 break;
             case GOTO_EVENT_TYPE.SCORES:

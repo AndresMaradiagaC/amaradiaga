@@ -12,8 +12,6 @@ export class LocalizationView extends HTMLView {
 
         this.container.className ='localization-view-container';
 
-        // this.appendChild(this.container); 
-        //Esto no hace falta aqui porque en la linea 13 al invocar div(this, ....) ya se esta pasando el parent element, que es this, al elemento que se va a creat en la funcion div.
 
         this.esBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.spanish(), onclick: this.changeLanguage.bind(this, LANGUAGE_TYPE.ES) });
 

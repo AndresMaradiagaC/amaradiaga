@@ -17,7 +17,7 @@ export class MenuView extends HTMLView {
 
 
 
-        this.playBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.play, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.PLAY) });
+        this.playBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.play(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.PLAY) });
 
         this.scoresBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.scores, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.SCORES) });
 
@@ -25,7 +25,7 @@ export class MenuView extends HTMLView {
 
         this.themesBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.themes, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.THEMES) });
 
-        this.creditsBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.credits, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.CREDITS) });
+        this.creditsBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.credits(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.CREDITS) });
 
         this.localizationBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.language, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.LOCALIZATION) });
 
