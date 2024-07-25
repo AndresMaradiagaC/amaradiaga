@@ -19,11 +19,11 @@ export class MenuView extends HTMLView {
 
         this.playBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.play(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.PLAY) });
 
-        this.scoresBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.scores, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.SCORES) });
+        this.scoresBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.scores(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.SCORES) });
 
-        this.difficultyBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.difficulty, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.DIFFICULTY) });
+        this.difficultyBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.difficulty(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.DIFFICULTY) });
 
-        this.themesBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.themes, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.THEMES) });
+        this.themesBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.themes(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.THEMES) });
 
         this.creditsBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.credits(), onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.CREDITS) });
 
@@ -43,6 +43,14 @@ export class MenuView extends HTMLView {
     }
     updateLanguage (){
         this.loginBtn.innerHTML = LOCALIZATION.login();
+        this.playBtn.innerHTML = LOCALIZATION.play();
+        this.scoresBtn.innerHTML = LOCALIZATION.scores();
+        this.difficultyBtn.innerHTML = LOCALIZATION.difficulty();
+        this.themesBtn.innerHTML = LOCALIZATION.themes();
+        this.creditsBtn.innerHTML = LOCALIZATION.credits();
+
+
+
     }
 
 }

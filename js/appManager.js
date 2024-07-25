@@ -18,7 +18,6 @@ export class AppManager {
         const navbarContainer = document.getElementById('navbarContainer');
         this.contentContainer = document.getElementById('contentContainer');
         this.backBtn = document.getElementById('backBtn');
-        this.backBtn.innerHTML = '◁';
 
         this.backBtn.onclick = this.onBackBtn.bind(this);
         this.backBtn.classList.add('hidden');
@@ -31,7 +30,15 @@ export class AppManager {
         window.addEventListener('goto', (event) => {
             this.changeScreen(event.detail.eventType);
         });
+
+    
+    
+        //REMOVE LATER
+        window.setTimeout(() => {
+            this.changeScreen(GOTO_EVENT_TYPE.PLAY);
+        }, 100);
     }
+        
 
     onBackBtn() {
         this.changeScreen(GOTO_EVENT_TYPE.MENU);
@@ -53,12 +60,12 @@ export class AppManager {
                 break;
             case GOTO_EVENT_TYPE.DIFFICULTY:
                 this.backBtn.classList.remove('hidden');
-                this.navbarTitle.innerHTML = LOCALIZATION.difficulty;
+                this.navbarTitle.innerHTML = LOCALIZATION.difficulty();
                 this.currentController = new DifficultyController(this.contentContainer);
                 break;
             case GOTO_EVENT_TYPE.THEMES:
                 this.backBtn.classList.remove('hidden');
-                this.navbarTitle.innerHTML = LOCALIZATION.themes;
+                this.navbarTitle.innerHTML = LOCALIZATION.themes();
                 this.currentController = new ThemesController(this.contentContainer);
 
                 break;
