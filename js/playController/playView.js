@@ -1,7 +1,5 @@
-import { DIFFICULTY_TYPE } from "../constants.js";
 import { HTMLView } from "../htmlView.js";
 import { div, span } from "../libs/html.js";
-import { LOCALIZATION } from "../localization.js";
 
 
 export class PlayView extends HTMLView {
@@ -28,17 +26,21 @@ export class PlayView extends HTMLView {
 
        div(this.resetBtn, {className:'play-view-resetBtn-icon'});
 
-
-       this.cardsContainer = div(this.container, { className:'play-view-cardsContainer'});
+        let contentContainer = div(this.container, { className:'play-view-contentContainer'});
+        
+       this.cardsContainer = div(contentContainer, { className:'play-view-cardsContainer'});
 
 
 
 
         this.show();
     }
-        showCards(cards){
+    showCards(cards) {
+        cards.forEach(card => {
+            div(this.cardsContainer, { innerHTML: card.icon, className: 'card' });
+        });
+    }
 
-        }
 
         onReset (){
 

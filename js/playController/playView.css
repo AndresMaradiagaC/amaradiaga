@@ -72,14 +72,29 @@
 .play-view-cardsContainer{
     /*position: fixed;*/
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
-    height: var(--play-view-hub-height);
-    background-color: red;
+    /*background-color: black;*/
+    /*height: var(--play-view-hub-height);*/
 }
+
+.play-view-contentContainer{
+    /*position: fixed;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    /*background-color: black;*/
+    height: calc(100% - var(--play-view-hub-height));
+}
+
 .play-view-col{
     display: flex;
     align-items: center;
@@ -87,3 +102,16 @@
     flex-direction: column;
 }
 
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100px;
+    font-size: 40px ;
+    background-color: var(--secondary-color);
+    border-width: 5px;
+    border-style: solid;
+    border-color: wheat;
+    box-sizing: border-box;
+}
