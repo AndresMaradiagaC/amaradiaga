@@ -19,6 +19,7 @@ export class LocalizationView extends HTMLView {
 
 
 
+
     }
 
     changeLanguage(language) {

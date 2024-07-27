@@ -4,6 +4,7 @@ export class CardView extends HTMLView {
     constructor(parentElement, controller, card) {
         super(parentElement, controller);
         this.card = card;
+        this.card.isSelected = false;
         this.className = 'card-view';
         this.innerHTML = '';
 
@@ -11,7 +12,7 @@ export class CardView extends HTMLView {
     }
 
     onCardClick() {
-        if(this.card.isDiscovered) return;
+        if(this.card.isSelected || this.card.isDiscovered) return;
         const event = new CustomEvent('on-card-click', {
             detail: {
                 card: this
@@ -22,10 +23,13 @@ export class CardView extends HTMLView {
     }
 
     showSelected() {
+        this.card.isSelected = true;
         this.innerHTML = this.card.icon;
     }
 
     hideSelected() {
+        this.card.isSelected = false;
+
         this.innerHTML = '';
     }
 
