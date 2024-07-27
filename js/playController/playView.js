@@ -1,5 +1,6 @@
 import { HTMLView } from "../htmlView.js";
 import { div, span } from "../libs/html.js";
+import { CardView } from "./cardView.js";
 
 
 export class PlayView extends HTMLView {
@@ -37,7 +38,7 @@ export class PlayView extends HTMLView {
     }
     showCards(cards) {
         cards.forEach(card => {
-            div(this.cardsContainer, { innerHTML: card.icon, className: 'card' });
+            let cardView = new CardView(this.cardsContainer, this.controller, card);
         });
     }
 
