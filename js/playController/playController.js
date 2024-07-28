@@ -21,6 +21,8 @@ export class PlayController extends Controller {
     }
 
     onCardSelection(cardView) {
+
+        if (this.showCardsTimer !== null ) return;
         if (this.cardView1 !== null && this.cardView2 !== null) return;
 
         if (this.cardView1 === null) {

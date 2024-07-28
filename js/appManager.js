@@ -6,6 +6,7 @@ import { ThemesController } from "./themesController/themesController.js";
 import { LocalizationController } from "./localizationController/localizationController.js";
 import { LoadingController } from "./loadingController/loadingController.js";
 import { PlayController } from "./playController/playController.js";
+import { LoginController } from "./loginController/loginController.js";
 
 
 export class AppManager {
@@ -35,7 +36,7 @@ export class AppManager {
     
         //REMOVE LATER
         window.setTimeout(() => {
-            this.changeScreen(GOTO_EVENT_TYPE.PLAY);
+            this.changeScreen(GOTO_EVENT_TYPE.LOGIN);
         }, 100);
     }
         
@@ -47,7 +48,9 @@ export class AppManager {
     changeScreen(eventType) {
         switch (eventType) {
             case GOTO_EVENT_TYPE.LOGIN:
-                this.navbarTitle.innerHTML = 'Login';
+                this.backBtn.classList.remove('hidden');
+                this.navbarTitle.innerHTML = LOCALIZATION.login();
+                this.currentController = new LoginController(this.contentContainer);
                 break;
             case GOTO_EVENT_TYPE.PLAY:
                 this.backBtn.classList.remove('hidden');
