@@ -8,6 +8,7 @@
 }
 
 .login-view-container {
+    left: 100%;
     position: fixed;
     display: flex;
     flex-direction: column;

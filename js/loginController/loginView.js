@@ -14,7 +14,7 @@ export class LoginView extends HTMLView {
         this.title = div(this.container, {className:'login-view-title', innerHTML: 'Add you name to save your scores'})
         this.usernameInput = input(this.container, {placeholder: 'User name', className: 'login-view-input'});
 
-        this.loginBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.login(), onclick: this.changeTheme.bind(this, THEME_TYPE.FOOD) });
+        this.loginBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.login(), onclick: this.onLoginBtn.bind(this) });
         this.show();
 
 
@@ -24,8 +24,18 @@ export class LoginView extends HTMLView {
 
     }
 
-    changeTheme(themeType) {
+    onLoginBtn() {
+        if(this.usernameInput.value !== ''){
 
+        let username = this.usernameInput.value;
+        const event = new CustomEvent('Save-username', {
+            detail: {
+                username: username
+            },
+            bubbles: true
+        });
+        this.dispatchEvent(event);
+        }
     }
 }
 

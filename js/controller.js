@@ -8,6 +8,6 @@ export class Controller {
 
     remove() {
         console.log('remove');
-        this.view.remove();
+        this.view.hide();
     }
 }

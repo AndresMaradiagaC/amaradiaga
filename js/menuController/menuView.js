@@ -29,6 +29,8 @@ export class MenuView extends HTMLView {
 
         this.localizationBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.language, onclick: this.changeScreen.bind(this, GOTO_EVENT_TYPE.LOCALIZATION) });
 
+        this.show();
+
 
     }
 

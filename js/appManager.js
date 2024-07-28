@@ -11,10 +11,13 @@ import { LoginController } from "./loginController/loginController.js";
 
 export class AppManager {
     constructor() {
+
         
         if (!localStorage.getItem('language')){
             localStorage.setItem('language', LANGUAGE_TYPE.EN);
         }
+
+
  
         const navbarContainer = document.getElementById('navbarContainer');
         this.contentContainer = document.getElementById('contentContainer');
@@ -32,12 +35,18 @@ export class AppManager {
             this.changeScreen(event.detail.eventType);
         });
 
+        window.addEventListener('Save-username', (event) =>{
+            localStorage.setItem('username', event.detail.username);
+            this.changeScreen(GOTO_EVENT_TYPE.MENU);
+        });
+
+
     
     
-        //REMOVE LATER
-        window.setTimeout(() => {
-            this.changeScreen(GOTO_EVENT_TYPE.LOGIN);
-        }, 100);
+       //REMOVE LATER
+       // window.setTimeout(() => {
+        //this.changeScreen(GOTO_EVENT_TYPE.LOGIN);
+       //}, 100);//
     }
         
 

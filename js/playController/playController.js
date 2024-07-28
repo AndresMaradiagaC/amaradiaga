@@ -9,6 +9,10 @@ export class PlayController extends Controller {
         this.view = new PlayView(parentElement, this);
         this.service = new PlayService(this, this.onCompletedGettingCards.bind(this));
 
+        this.clicks = 0;
+        this.time = 0;
+        this.timer = null;
+
         this.cards = null;
         this.cardView1 = null;
         this.cardView2 = null;

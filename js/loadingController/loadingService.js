@@ -11,7 +11,7 @@ export class LoadingService extends Service{
         window.setTimeout(() => {
             console.log('finish fetch');
             this.changeScreen(GOTO_EVENT_TYPE.MENU);
-        }, 100);
+        }, 10);
     }
 
     

@@ -17,7 +17,7 @@ export class LocalizationView extends HTMLView {
 
         this.enBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.english(), onclick: this.changeLanguage.bind(this, LANGUAGE_TYPE.EN) });
 
-
+        this.show();
 
 
     }
