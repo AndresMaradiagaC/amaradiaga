@@ -40,7 +40,9 @@ export class AppManager {
             this.changeScreen(GOTO_EVENT_TYPE.MENU);
         });
 
-
+        window.addEventListener('change-difficulty', (event) =>{
+            localStorage.setItem('difficulty', event.detail.difficulty);
+        });
     
     
        //REMOVE LATER

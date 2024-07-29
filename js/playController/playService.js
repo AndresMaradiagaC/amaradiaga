@@ -4,11 +4,10 @@ import { Service } from "../service.js";
 export class PlayService extends Service{
     constructor(controller, onCompleted){
         super(controller, onCompleted);
-        this.fetch();
+        this.requestCards();
     }
 
-    fetch(){
-
+    requestCards() { 
         let request = new XMLHttpRequest();
         request.open('GET', '../data/cards.json');
         request.onload = () => {

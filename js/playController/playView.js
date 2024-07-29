@@ -15,13 +15,13 @@ export class PlayView extends HTMLView {
 
         span(col, {innerHTML: 'Clicks', className:'play-view-title'});
 
-       this.clicks = span(col, {innerHTML: '1000', className:'play-view-clicks'});
+       this.clicks = span(col, {innerHTML: '0', className:'play-view-clicks'});
 
        col = div(this.hudContainer, {className: 'play-view-col'});
 
        this.timeTitle = span(col, {innerHTML: 'Time', className:'play-view-title'});
 
-       this.time = span(col, {innerHTML: '30', className:'play-view-time'});
+       this.time = span(col, {innerHTML: '0', className:'play-view-time'});
 
        this.resetBtn = div(this.hudContainer, {className:'play-view-resetBtn', onclick: this.onReset.bind(this)});
 
@@ -37,6 +37,7 @@ export class PlayView extends HTMLView {
         this.show();
     }
     showCards(cards) {
+        this.cardsContainer.innerHTML= '';
         cards.forEach(card => {
             let cardView = new CardView(this.cardsContainer, this.controller, card);
         });
@@ -44,9 +45,14 @@ export class PlayView extends HTMLView {
 
 
         onReset (){
-
+            this.controller.restarGame();
         }
 
+        updateHub(clicksCounter, timeCounter) {
+            this.clicks.innerHTML = `${clicksCounter}`;
+            this.time.innerHTML = `${timeCounter}`;
+        }
+        
 
 
     }

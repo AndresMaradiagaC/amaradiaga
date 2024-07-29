@@ -9,8 +9,8 @@ export class PlayController extends Controller {
         this.view = new PlayView(parentElement, this);
         this.service = new PlayService(this, this.onCompletedGettingCards.bind(this));
 
-        this.clicks = 0;
-        this.time = 0;
+        this.clicksCounter = 0;
+        this.timeCounter = 0;
         this.timer = null;
 
         this.cards = null;
@@ -29,6 +29,9 @@ export class PlayController extends Controller {
         if (this.showCardsTimer !== null ) return;
         if (this.cardView1 !== null && this.cardView2 !== null) return;
 
+        this.clicksCounter += 1;
+        this.view.updateHub(this.clicksCounter, this.timeCounter);
+
         if (this.cardView1 === null) {
             this.cardView1 = cardView;
             this.cardView1.showSelected();
@@ -45,6 +48,8 @@ export class PlayController extends Controller {
                 this.cardView2 = null;
                 if (this.isGameComplete()) {
                     console.log('GAME COMPLETED');
+                    clearInterval(this.timer);
+                    this.timer= null;
                 }
             } else {
                 this.showCardsTimer = setTimeout(() => {
@@ -77,5 +82,26 @@ export class PlayController extends Controller {
     onCompletedGettingCards(cards) {
         this.cards = cards;
         this.view.showCards(cards);
+        this.timer = setInterval(() => {
+            this.timeCounter += 1;
+            this.view.updateHub(this.clicksCounter, this.timeCounter);
+        }, 1000); 
+    }
+    
+    restarGame(){
+        clearInterval(this.timer);
+        this.timer= null;
+        clearTimeout(this.showCardsTimer);
+        this.showCardsTimer = null;
+
+        this.cards = null;
+        this.cardView1 = null;
+        this.cardView2 = null;
+
+        this.clicksCounter = 0;
+        this.timeCounter = 0;
+        this.view.updateHub(this.clicksCounter, this.timeCounter);
+
+        this.service.requestCards();
     }
 }
