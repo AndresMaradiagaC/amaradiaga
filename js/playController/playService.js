@@ -1,4 +1,4 @@
-import { GOTO_EVENT_TYPE } from "../constants.js";
+import { DIFFICULTY_TYPE, GOTO_EVENT_TYPE, THEME_TYPE } from "../constants.js";
 import { Service } from "../service.js";
 
 export class PlayService extends Service{
@@ -8,18 +8,26 @@ export class PlayService extends Service{
     }
 
     requestCards() { 
-        let localURL = 'http://localhost:3000/cards';
+        let difficulty = localStorage.getItem('difficulty');
+        let theme = localStorage.getItem('theme');
+
+        if (!difficulty) {
+            difficulty = DIFFICULTY_TYPE.MED;
+        }
+
+        if (!theme) {
+            theme = THEME_TYPE.FOOD;
+        }
+
+        let localURL = `http://localhost:3000/cards/${difficulty}/${theme}`;
 
         let request = new XMLHttpRequest();
         request.open('GET', localURL);
         request.onload = () => {
             let data = JSON.parse(request.response);
             this.onCompleted(data.cards);
-        }
+        };
 
         request.send();
-
-    }
-
-
+    } 
 }
