@@ -8,8 +8,10 @@ export class PlayService extends Service{
     }
 
     requestCards() { 
+        let localURL = 'http://localhost:3000/cards';
+
         let request = new XMLHttpRequest();
-        request.open('GET', '../data/cards.json');
+        request.open('GET', localURL);
         request.onload = () => {
             let data = JSON.parse(request.response);
             this.onCompleted(data.cards);
