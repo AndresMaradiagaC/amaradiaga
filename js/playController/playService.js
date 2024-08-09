@@ -19,14 +19,17 @@ export class PlayService extends Service{
             theme = THEME_TYPE.FOOD;
         }
 
-        let localURL = `http://localhost:3000/cards/${difficulty}/${theme}`;
 
-        let request = new XMLHttpRequest();
-        request.open('GET', localURL);
-        request.onload = () => {
-            let data = JSON.parse(request.response);
-            this.onCompleted(data.cards);
-        };
+    // Construir la URL dependiendo del entorno
+    let baseURL = window.location.origin; // Esto capturará la URL base en cualquier entorno
+    let apiURL = `${baseURL}/cards/${difficulty}/${theme}`;
+
+    let request = new XMLHttpRequest();
+    request.open('GET', apiURL);
+    request.onload = () => {
+        let data = JSON.parse(request.response);
+        this.onCompleted(data.cards);
+    };
 
         request.send();
     } 

@@ -41,7 +41,13 @@ export class AppManager {
         });
 
         window.addEventListener('change-difficulty', (event) =>{
+            console.log(event);
             localStorage.setItem('difficulty', event.detail.difficulty);
+        });
+
+        window.addEventListener('change-theme', (event) =>{
+            console.log(event);
+            localStorage.setItem('theme', event.detail.theme);
         });
     
     
