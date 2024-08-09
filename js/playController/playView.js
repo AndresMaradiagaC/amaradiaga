@@ -1,5 +1,7 @@
+import { THEME_TYPE } from "../constants.js";
 import { HTMLView } from "../htmlView.js";
 import { div, span } from "../libs/html.js";
+import { CardimageView } from "./cardimageView.js";
 import { CardView } from "./cardView.js";
 
 
@@ -38,9 +40,27 @@ export class PlayView extends HTMLView {
     }
     showCards(cards) {
         this.cardsContainer.innerHTML= '';
+
+        const theme = localStorage.getItem('theme');
+
         cards.forEach(card => {
-            let cardView = new CardView(this.cardsContainer, this.controller, card);
+            switch (theme) {
+                case THEME_TYPE.FOOD:
+                case THEME_TYPE.FACES:
+                case THEME_TYPE.FLAGS:
+                    new CardView(this.cardsContainer, this.controller, card);
+                    break;
+                case THEME_TYPE.PACMAN:
+                    new CardimageView(this.cardsContainer, this.controller, card, theme);
+                    break;
+                default:
+                    new CardView(this.cardsContainer, this.controller, card);
+                    break;
+
+
+            }
         });
+        
     }
 
 

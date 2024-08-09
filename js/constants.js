@@ -31,11 +31,13 @@ export const DIFFICULTY_TYPE = {
 const food = 'FOOD';
 const faces = 'FACES';
 const flags = 'FLAGS';
+const pacman = 'PACMAN';
 
 export const THEME_TYPE = {
     FOOD: food,
     FACES: faces,
-    FLAGS: flags 
+    FLAGS: flags,
+    PACMAN: pacman
 };
 
 const spanish = 'es';

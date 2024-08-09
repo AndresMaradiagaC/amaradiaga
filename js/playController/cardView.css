@@ -17,3 +17,12 @@
     background-color: var(--tertiary-color);
 
 }
+
+.card-image-view {
+    width: 70%;
+    height: auto;
+}
+
+.card-view-hidden{
+    display: none;
+}

@@ -19,8 +19,8 @@ export class PlayService extends Service{
             theme = THEME_TYPE.FOOD;
         }
 
-       let url = `https://amaradiaga-memory-game-be.vercel.app/cards/${difficulty}/${theme}`;
-        //let url = `http://localhost:3000/cards/${difficulty}/${theme}`;
+       //let url = `https://amaradiaga-memory-game-be.vercel.app/cards/${difficulty}/${theme}`;
+        let url = `http://localhost:3000/cards/${difficulty}/${theme}`;
 
         let request = new XMLHttpRequest();
         request.open('GET', url);

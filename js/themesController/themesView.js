@@ -19,6 +19,10 @@ export class ThemesView extends HTMLView {
         this.facesBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.faces(), onclick: this.changeTheme.bind(this, THEME_TYPE.FACES) });
 
         this.flagsBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.flags(), onclick: this.changeTheme.bind(this, THEME_TYPE.FLAGS) });
+
+        this.pacmanBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.pacman(), onclick: this.changeTheme.bind(this, THEME_TYPE.PACMAN) });
+
+
         this.show();
 
 

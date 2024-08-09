@@ -1,16 +1,22 @@
 import { HTMLView } from "../htmlView.js";
+import { img } from "../libs/html.js";
 
-export class CardView extends HTMLView {
-    constructor(parentElement, controller, card) {
+
+export class CardimageView extends HTMLView {
+    constructor(parentElement, controller, card, theme) {
         super(parentElement, controller);
         this.card = card;
         this.card.isSelected = false;
         this.className = 'card-view';
         this.innerHTML = '';
 
-        this.onclick = this.onCardClick.bind(this);
 
-    
+
+        this.image = img(this, {
+            className: 'card-image-view card-view-hidden',
+            src: `./imagenes/${theme.toLowerCase()}/${card.icon}`
+        });
+        this.onclick = this.onCardClick.bind(this);
     }
 
     onCardClick() {
@@ -23,16 +29,18 @@ export class CardView extends HTMLView {
         });
         this.dispatchEvent(event);
     }
-
+ 
     showSelected() {
         this.card.isSelected = true;
-        this.innerHTML = this.card.icon;
+        this.image.classList.remove('card-view-hidden');
+
+        //this.innerHTML = this.card.icon;
     }
 
     hideSelected() {
         this.card.isSelected = false;
-
-        this.innerHTML = '';
+        this.image.classList.add('card-view-hidden');
+        //this.innerHTML = '';
     }
 
     showDiscovered(){
@@ -40,4 +48,4 @@ export class CardView extends HTMLView {
     }
 }
 
-customElements.define("card-view", CardView);
+customElements.define("card-image-view", CardimageView);
