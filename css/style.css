@@ -1,7 +1,10 @@
 * {
     padding: 0px;
     margin: 0px;
-    font-family: "Londrina Solid", sans-serif;
+    font-family: "Honk", system-ui;
+    font-variation-settings:
+    "MORF" 14,
+    "SHLN" 10;
 
 
 }
@@ -9,9 +12,9 @@
 
 :root {
     --main-background-color: #1110109f;
-    --primary-color:  #015900;
-    --secondary-color: #593400;
-    --tertiary-color: #006073;
+    --primary-color:  #114d23;
+    --secondary-color: #0b2b53;
+    --tertiary-color: #039c6e;
     --navbar-container-height: 70px;
     --button-color: white;
     --button-background-color: var(--secondary-color);
@@ -19,12 +22,7 @@
     --text-color: white;
 
 }
-.londrina-solid-thin {
-    font-family: "Londrina Solid", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
+
 
 .mainContainer {
     width: 100vw;
@@ -51,7 +49,7 @@
     position: fixed;
     left: 10px;
     color: var(--primary-color);
-    font-size: 30px;
+    font-size: 80px;
     cursor: pointer;
     padding-right: 5px;
     border-radius: 50%;
@@ -60,7 +58,7 @@
 
 .navbarContainer-tittle{
     color: var(--button-color);
-    font-size: 30px;
+    font-size: 50px;
 
 }
 
@@ -89,7 +87,7 @@
     width: 50%;
     border-radius: 10px;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 400;
     font-style: normal;
 
