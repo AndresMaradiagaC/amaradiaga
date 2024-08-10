@@ -30,14 +30,17 @@ export class ThemesView extends HTMLView {
 
     }
 
-    changeTheme(theme) {
+    changeTheme(themeType) {
+
         const event = new CustomEvent('change-theme', {
             detail: {
-                theme: theme
+                theme: themeType
             },
             bubbles: true
         });
+
         this.dispatchEvent(event);
+
     }
 }
 
