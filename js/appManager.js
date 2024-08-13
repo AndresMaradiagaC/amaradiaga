@@ -12,13 +12,13 @@ import { LoginController } from "./loginController/loginController.js";
 export class AppManager {
     constructor() {
 
-        
-        if (!localStorage.getItem('language')){
+
+        if (!localStorage.getItem('language')) {
             localStorage.setItem('language', LANGUAGE_TYPE.EN);
         }
 
 
- 
+
         const navbarContainer = document.getElementById('navbarContainer');
         this.contentContainer = document.getElementById('contentContainer');
         this.backBtn = document.getElementById('backBtn');
@@ -28,35 +28,35 @@ export class AppManager {
 
         this.navbarTitle = document.getElementById('navbarTitle');
 
-        this.menuController = new  MenuController(this.contentContainer);
+        this.menuController = new MenuController(this.contentContainer);
         this.currentController = new LoadingController(this.contentContainer);
 
         window.addEventListener('goto', (event) => {
             this.changeScreen(event.detail.eventType);
         });
 
-        window.addEventListener('Save-username', (event) =>{
+        window.addEventListener('Save-username', (event) => {
             localStorage.setItem('username', event.detail.username);
             this.changeScreen(GOTO_EVENT_TYPE.MENU);
         });
 
-        window.addEventListener('change-difficulty', (event) =>{
+        window.addEventListener('change-difficulty', (event) => {
             console.log(event);
             localStorage.setItem('difficulty', event.detail.difficulty);
         });
 
-        window.addEventListener('change-theme', (event) =>{
+        window.addEventListener('change-theme', (event) => {
             console.log(event);
             localStorage.setItem('theme', event.detail.theme);
         });
-    
-    
-       //REMOVE LATER
-       // window.setTimeout(() => {
+
+
+        //REMOVE LATER
+        // window.setTimeout(() => {
         //this.changeScreen(GOTO_EVENT_TYPE.LOGIN);
-       //}, 100);//
+        //}, 100);//
     }
-        
+
 
     onBackBtn() {
         this.changeScreen(GOTO_EVENT_TYPE.MENU);
@@ -99,11 +99,11 @@ export class AppManager {
                 this.currentController.remove();
                 this.currentController = null;
                 break;
-                case GOTO_EVENT_TYPE.LOCALIZATION:
-                    this.navbarTitle.innerHTML = LOCALIZATION.language;
-                    this.backBtn.classList.add('hidden');
-                    this.currentController = new LocalizationController(this.contentContainer);
-                    break;
+            case GOTO_EVENT_TYPE.LOCALIZATION:
+                this.backBtn.classList.remove('hidden');
+                this.navbarTitle.innerHTML = LOCALIZATION.language;
+                this.currentController = new LocalizationController(this.contentContainer);
+                break;
             default:
                 break;
         }
