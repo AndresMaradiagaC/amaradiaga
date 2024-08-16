@@ -33,7 +33,7 @@ export class PlayService extends Service{
     } 
     sendScore(score){
         //let url = `https://amaradiaga-memory-game-be.vercel.app/score`;
-        let url = `http://localhost:3000/score`;
+        let url = `http://localhost:3000/scores`;
 
         let request = new XMLHttpRequest();
         request.open('POST', url);
@@ -41,7 +41,7 @@ export class PlayService extends Service{
             //let data = JSON.parse(request.response);
             //this.onCompleted(data.cards);
             console.log(request);
-        };
+        }
 
         request.send(JSON.stringify(score));
     }

@@ -57,9 +57,10 @@ export class PlayController extends Controller {
                         "difficulty": localStorage.getItem('difficulty'),
                         "clicks": this.clicksCounter,
                         "score": (this.clicksCounter + this.timeCounter),
-                        "time": history.timeCounter,
-                        "username": localStorage.getItem('username')};
-                    this.service.sendScore(null);
+                        "time": this.timeCounter,
+                        "username": localStorage.getItem('username')
+                    };
+                    this.service.sendScore(score);
                 }
             } else {
                 this.showCardsTimer = setTimeout(() => {
