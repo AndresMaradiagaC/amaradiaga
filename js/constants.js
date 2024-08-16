@@ -32,12 +32,15 @@ const food = 'FOOD';
 const faces = 'FACES';
 const flags = 'FLAGS';
 const pacman = 'PACMAN';
+const mario = 'MARIO';
+
 
 export const THEME_TYPE = {
     FOOD: food,
     FACES: faces,
     FLAGS: flags,
-    PACMAN: pacman
+    PACMAN: pacman,
+    MARIO: mario
 };
 
 const spanish = 'es';

@@ -13,6 +13,10 @@ export class ThemesView extends HTMLView {
         this.container.className ='themes-view-container';
 
 
+        this.pacmanBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.pacman(), onclick: this.changeTheme.bind(this, THEME_TYPE.PACMAN) });
+
+        this.marioBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.mario(), onclick: this.changeTheme.bind(this, THEME_TYPE.MARIO) });
+
 
         this.foodBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.food(), onclick: this.changeTheme.bind(this, THEME_TYPE.FOOD) });
 
@@ -20,7 +24,6 @@ export class ThemesView extends HTMLView {
 
         this.flagsBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.flags(), onclick: this.changeTheme.bind(this, THEME_TYPE.FLAGS) });
 
-        this.pacmanBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.pacman(), onclick: this.changeTheme.bind(this, THEME_TYPE.PACMAN) });
 
 
         this.show();
