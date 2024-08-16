@@ -61,9 +61,9 @@ export class AppManager {
 
 
         //REMOVE LATER
-        window.setTimeout(() => {
-        this.changeScreen(GOTO_EVENT_TYPE.SCORES);
-        }, 100);//
+       // window.setTimeout(() => {
+       // this.changeScreen(GOTO_EVENT_TYPE.MENU);
+       // }, 100);//
     }
 
 
