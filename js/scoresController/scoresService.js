@@ -8,8 +8,8 @@ export class ScoresService extends Service {
     }
 
     fetch() {
-         let url = `https://amaradiaga-memory-game-be.vercel.app/scores`;
-        //const url = `http://localhost:3000/scores`;
+        //let url = `https://amaradiaga-memory-game-be.vercel.app/scores`;
+        const url = `http://localhost:3000/scores`;
 
         const request = new XMLHttpRequest();
         request.open('GET', url);
