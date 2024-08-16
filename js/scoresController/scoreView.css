@@ -1,0 +1,68 @@
+.score-view {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 200px;
+}
+
+.score-view-container {
+    /*left: 100%;*/
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background-color:var(--primary-color);
+}
+
+.score-view-title{
+    color: var(--button-color);
+    font-size: 25px;
+   
+}
+
+.score-view-row1{
+    width: 100%;
+    height: 40%;
+    background-color: var(--color-prueba);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px;
+}
+.score-view-row2{
+    width: 100%;
+    height: 60%;
+    background-color: var(--tertiary-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    border-bottom-left-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+
+}
+.score-view-col{
+   /* width: 100%;*/
+    height: 100%;
+    /*background-color: var(--tertiary-color);*/
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.score-view-name{
+    color: var(--button-color);
+    font-size: 10px;
+   
+}
+.score-view-value{
+    color: var(--button-color);
+    font-size: 10px;
+   
+}

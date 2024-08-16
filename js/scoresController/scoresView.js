@@ -2,27 +2,31 @@ import { DIFFICULTY_TYPE } from "../constants.js";
 import { HTMLView } from "../htmlView.js";
 import { div, span } from "../libs/html.js";
 import { LOCALIZATION } from "../localization.js";
+import { ScoreView } from "./scoreView.js";
 
 
-export class LoadingView extends HTMLView {
+export class ScoresView extends HTMLView {
     constructor(parentElement, controller) {
         super(parentElement, controller);
-        this.className = 'loading-view';
-        this.container.className ='loading-view-container';
+        this.className = 'scores-view';
+        this.container.className ='scores-view-container';
 
-        let brand = div(this.container, {className: 'loading-view-loading-brand'});
 
-        let title = span(this.container, {innerHTML: 'LOADING...', className:'loading-view-title'});
 
 
         this.show();
+    }
 
-
-
+        showScores(scores){
+        console.log(scores);
+        scores.forEach(score => {
+            const scoreView = new ScoreView(this.container, score);
+            
+        });
 
 
     }
 
 }
 
-customElements.define("loading-view", LoadingView);
+customElements.define("scores-view", ScoresView);

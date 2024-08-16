@@ -1,13 +1,23 @@
 import { Controller } from "../controller.js";
-import { LoadingService } from "./loadingService.js";
-import {LoadingView } from "./loadingView.js";
+import { ScoresService } from "./scoresService.js";
+import {ScoresView } from "./scoresView.js";
 
-export class LoadingController extends Controller{
+export class ScoresController extends Controller{
     constructor(parentElement, appManager){
         super();
         this.appManager = appManager;
-        this.view = new LoadingView(parentElement, this);
-        this.service = new LoadingService(this);
+        this.view = new ScoresView(parentElement, this);
+        this.service = new ScoresService(this, this.onCompletedGettingScores.bind(this));
 
+    }
+    
+    onCompletedGettingScores(scores) {
+        this.view.showScores(scores)
+       // this.cards = cards;
+       // this.view.showCards(cards);
+       // this.timer = setInterval(() => {
+       //     this.timeCounter += 1;
+     //       this.view.updateHub(this.clicksCounter, this.timeCounter);
+     //   }, 1000); 
     }
 }

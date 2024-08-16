@@ -50,6 +50,16 @@ export class PlayController extends Controller {
                     console.log('GAME COMPLETED');
                     clearInterval(this.timer);
                     this.timer= null;
+
+                    
+
+                    const score = {
+                        "difficulty": localStorage.getItem('difficulty'),
+                        "clicks": this.clicksCounter,
+                        "score": (this.clicksCounter + this.timeCounter),
+                        "time": history.timeCounter,
+                        "username": localStorage.getItem('username')};
+                    this.service.sendScore(null);
                 }
             } else {
                 this.showCardsTimer = setTimeout(() => {

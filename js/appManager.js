@@ -1,4 +1,4 @@
-import { GOTO_EVENT_TYPE, LANGUAGE_TYPE } from "./constants.js";
+import { DIFFICULTY_TYPE, GOTO_EVENT_TYPE, LANGUAGE_TYPE } from "./constants.js";
 import { DifficultyController } from "./difficultyController/difficultyController.js";
 import { LOCALIZATION } from "./localization.js";
 import { MenuController } from "./menuController/menuController.js";
@@ -7,6 +7,7 @@ import { LocalizationController } from "./localizationController/localizationCon
 import { LoadingController } from "./loadingController/loadingController.js";
 import { PlayController } from "./playController/playController.js";
 import { LoginController } from "./loginController/loginController.js";
+import { ScoresController } from "./scoresController/scoresController.js";
 
 
 export class AppManager {
@@ -15,6 +16,14 @@ export class AppManager {
 
         if (!localStorage.getItem('language')) {
             localStorage.setItem('language', LANGUAGE_TYPE.EN);
+        }
+
+        if (!localStorage.getItem('difficulty')) {
+            localStorage.setItem('difficulty', DIFFICULTY_TYPE.MED);
+        }
+
+        if (!localStorage.getItem('username')) {
+            localStorage.setItem('username', 'none:');
         }
 
 
@@ -52,9 +61,9 @@ export class AppManager {
 
 
         //REMOVE LATER
-        // window.setTimeout(() => {
-        //this.changeScreen(GOTO_EVENT_TYPE.LOGIN);
-        //}, 100);//
+        window.setTimeout(() => {
+        this.changeScreen(GOTO_EVENT_TYPE.SCORES);
+        }, 100);//
     }
 
 
@@ -76,7 +85,9 @@ export class AppManager {
 
                 break;
             case GOTO_EVENT_TYPE.SCORES:
-                this.navbarTitle.innerHTML = 'Scores';
+                this.backBtn.classList.remove('hidden');
+                this.navbarTitle.innerHTML = LOCALIZATION.scores();
+                this.currentController = new ScoresController(this.contentContainer);
                 break;
             case GOTO_EVENT_TYPE.DIFFICULTY:
                 this.backBtn.classList.remove('hidden');
@@ -91,6 +102,7 @@ export class AppManager {
                 break;
             case GOTO_EVENT_TYPE.CREDITS:
                 this.navbarTitle.innerHTML = 'Credits';
+
                 break;
             case GOTO_EVENT_TYPE.MENU:
                 this.navbarTitle.innerHTML = LOCALIZATION.menu();
