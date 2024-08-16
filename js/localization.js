@@ -19,7 +19,7 @@ const food = 'Food';
 const faces = 'Faces';
 const flags = 'Flags';
 const pacman = 'Pacman';
-const mario = 'Super Mario Bros';
+const mario = 'Mario';
 
 
 
@@ -43,7 +43,7 @@ const foodES = 'Comida';
 const facesES = 'Caras';
 const flagsES = 'Banderas';
 const pacmanES = 'Pacman';
-const marioES = 'Super Mario Bros';
+const marioES = 'Mario';
 
 
 
