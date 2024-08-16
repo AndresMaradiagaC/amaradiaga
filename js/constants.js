@@ -33,6 +33,8 @@ const faces = 'FACES';
 const flags = 'FLAGS';
 const pacman = 'PACMAN';
 const mario = 'MARIO';
+const sonic = 'SONIC';
+
 
 
 export const THEME_TYPE = {
@@ -40,7 +42,8 @@ export const THEME_TYPE = {
     FACES: faces,
     FLAGS: flags,
     PACMAN: pacman,
-    MARIO: mario
+    MARIO: mario,
+    SONIC: sonic
 };
 
 const spanish = 'es';

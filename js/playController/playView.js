@@ -56,6 +56,9 @@ export class PlayView extends HTMLView {
                 case THEME_TYPE.MARIO:
                     new CardimageView(this.cardsContainer, this.controller, card, theme);
                     break;
+                case THEME_TYPE.SONIC:
+                    new CardimageView(this.cardsContainer, this.controller, card, theme);
+                    break;
                 default:
                     new CardView(this.cardsContainer, this.controller, card);
                     break;

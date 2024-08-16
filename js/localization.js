@@ -20,6 +20,8 @@ const faces = 'Faces';
 const flags = 'Flags';
 const pacman = 'Pacman';
 const mario = 'Mario';
+const sonic = 'Sonic';
+
 
 
 
@@ -44,6 +46,8 @@ const facesES = 'Caras';
 const flagsES = 'Banderas';
 const pacmanES = 'Pacman';
 const marioES = 'Mario';
+const sonicES = 'Sonic';
+
 
 
 
@@ -67,6 +71,7 @@ export const LOCALIZATION = {
     flags:  ()=> {return localStorage.getItem('language') === LANGUAGE_TYPE.EN ? flags : flagsES},
     pacman:  ()=> {return localStorage.getItem('language') === LANGUAGE_TYPE.EN ? pacman : pacmanES},
     mario:  ()=> {return localStorage.getItem('language') === LANGUAGE_TYPE.EN ? mario : marioES},
+    sonic:  ()=> {return localStorage.getItem('language') === LANGUAGE_TYPE.EN ? sonic : sonicES},
     spanish: ()=> {return localStorage.getItem('language') === LANGUAGE_TYPE.EN ? spanish : spanishES },
     english: ()=> {return  localStorage.getItem('language') === LANGUAGE_TYPE.EN ? english : englishES},
 

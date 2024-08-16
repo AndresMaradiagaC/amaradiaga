@@ -17,6 +17,7 @@ export class ThemesView extends HTMLView {
 
         this.marioBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.mario(), onclick: this.changeTheme.bind(this, THEME_TYPE.MARIO) });
 
+        this.sonicBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.sonic(), onclick: this.changeTheme.bind(this, THEME_TYPE.SONIC) });
 
         this.foodBtn = div(this.container, { className: 'button', innerHTML: LOCALIZATION.food(), onclick: this.changeTheme.bind(this, THEME_TYPE.FOOD) });
 
